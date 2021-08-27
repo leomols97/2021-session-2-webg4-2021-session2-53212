@@ -19,7 +19,7 @@
                 @foreach($emplacements as $emplacement)
                 <tr>
                     <th> <a href='javascript:void(0)'> {{$emplacement->nom_emplacement}} </a>
-                        @yield('objets')
+                        @yield('contenuEmplacement')
                     </th>
                     <th> {{$emplacement->nb_objets}} </th>
                 </tr>

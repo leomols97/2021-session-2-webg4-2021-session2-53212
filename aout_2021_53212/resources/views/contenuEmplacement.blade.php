@@ -13,7 +13,7 @@
         <th>
             <table class="table table-striped">
                 <tr>
-                    <th> Nom de l'emplacement </th>
+                    <th> Nom de l'objet </th>
                     <th> Nombre d'objets à l'emplacement </th>
                 </tr>
                 @foreach($emplacements as $emplacement)

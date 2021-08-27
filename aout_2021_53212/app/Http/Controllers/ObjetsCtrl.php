@@ -9,7 +9,7 @@ class ObjetsCtrl extends Controller
 {
     public function objets($id)
     {
-        $objets = EmplcmtsModel::showDepots($id);
+        $objets = EmplcmtsModel::showContenu($id);
 
         $objet = new stdClass();
 
