@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Support\Facades\DB;
 class EmplcmtsModel extends Model
 {
     use HasFactory;
 
     static public function findAll() {
-        $depots = DB::select( '
-        SELECT r.id AS id_repo, r.name AS nom_depot, con.name AS nom_contributor, COUNT(com.id) AS nb_commits, com.message as message_commit
-        FROM repositories r
-        JOIN contributors con ON con.login = r.contributor_login
-        LEFT JOIN commits com ON com.repository_id = r.id
-        GROUP BY r.id, r.name
+        $emplacements = DB::select( '
+        SELECT e.name AS nom_emplacement, COUNT(e.id) AS nb_objets
+        FROM Emplacements e
+        LEFT JOIN Objets o ON o.emplacement_id = e.id
+        GROUP BY e.name
         ');
-        return $depots;
+        return $emplacements;
     }
 
     static public function showDepots($id) {

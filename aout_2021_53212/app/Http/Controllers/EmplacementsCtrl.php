@@ -9,7 +9,7 @@ class EmplacementsCtrl extends Controller
 {
     public function emplacements()
     {
-        $depots = EmplcmtsModel::findAll();
-        return view("repo", ["depots" => $depots]);
+        $emplacements = EmplcmtsModel::findAll();
+        return view("emplacements", ["emplacements" => $emplacements]);
     }
 }
