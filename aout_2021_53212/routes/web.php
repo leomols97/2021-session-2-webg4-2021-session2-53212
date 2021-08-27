@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilCtrl;
 use App\Http\Controllers\EmplacementsCtrl;
+use App\Http\Controllers\ObjetsCtrl;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/', function () {
 Route::get('accueil', [ AccueilCtrl::class, 'home'] );
 
 Route::get('emplacements', [ EmplacementsCtrl::class, 'emplacements'] );
+
+Route::get('emplacements/{id}', [ ObjetsCtrl::class, 'showContenu'] );
