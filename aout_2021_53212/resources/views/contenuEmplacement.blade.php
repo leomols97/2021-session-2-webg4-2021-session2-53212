@@ -18,9 +18,7 @@
                 </tr>
                 @foreach($emplacements as $emplacement)
                 <tr>
-                    <th> <a href='javascript:void(0)'> {{$emplacement->nom_emplacement}} </a>
-                        @yield('objets')
-                    </th>
+                    <th> {{$emplacement->nom_emplacement}} </th>
                     <th> {{$emplacement->nb_objets}} </th>
                 </tr>
                 @endforeach
@@ -32,6 +30,10 @@
     </tr>
     <!-- -->
 </table>
+
+
+
+
 <div id="detailEmplacement">
 
 </div>

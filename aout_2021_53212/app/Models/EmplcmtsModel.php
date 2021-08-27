@@ -20,15 +20,13 @@ class EmplcmtsModel extends Model
         return $emplacements;
     }
 
-    static public function showDepots($id) {
-        $depots = DB::select( "
-        SELECT r.name AS nom_depot, con.name AS nom_contributor, com.message as message_commit, date as date
-        FROM repositories r
-        JOIN contributors con ON con.login = r.contributor_login
-        LEFT JOIN commits com ON com.repository_id = r.id
-        WHERE r.id=$id
-        GROUP BY r.id, r.name, com.message
+    static public function showContenu($id) {
+        $contenu = DB::select( "
+        SELECT e.id AS id_emplacement, e.name AS nom_emplacement, o.name AS nom_objet, o.created_at AS date_d_entree
+        FROM emplacements e
+        LEFT JOIN Objets o ON o.emplacement_id = e.id
+        WHERE e.id=$id
         ");
-        return $depots;
+        return $contenu;
     }
 }
