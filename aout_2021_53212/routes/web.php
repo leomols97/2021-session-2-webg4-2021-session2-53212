@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccueilCtrl;
+use App\Http\Controllers\EmplacementsCtrl;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('accueil', [ AccueilCtrl::class, 'home'] );
+
+Route::get('emplacements', [ EmplacementsCtrl::class, 'emplacements'] );
